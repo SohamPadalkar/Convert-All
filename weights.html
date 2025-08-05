@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+        <title>ConvertAll</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:900,700,400&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="header">
+            <h2>Convert All Your Weights</h2>
+        </div>
+        <div class="conversion-nav">
+            <button class="nav-btn" id="kg-pound-btn">Kg To Pounds(lb)</button>
+            <button class="nav-btn" id="grams-ounces-btn">Grams(g) To Ounces(oz)</button>
+            <button class="nav-btn" id="pounds-ounces-btn">Pounds(lb) To Ounces(oz)</button>
+            <button class="nav-btn" id="st-pound-btn">Stones(st) To Pounds(lb)</button>
+            <button class="nav-btn" id="ton-kg-btn">Tonnes to Kg</button>
+        </div>
+        <div class="conversion-card" id="kg-pound-card">
+            <div class="input-row">
+                <input type="number" id="kg-input" class="input-box" placeholder="Kg">
+                <span class="unit-label">Kg</span>
+            </div>
+            <div class="equals-row">
+                <button class="equals-btn" onClick="convertKgToLb()">=</button>
+            </div>
+            <div class="output-row">
+                <div class="output-value" id="lb-output"></div>
+                <span class="unit-label output-unit">Pounds(lb)</span> 
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

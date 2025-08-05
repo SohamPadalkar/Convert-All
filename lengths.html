@@ -13,12 +13,12 @@
         </div>
         <div class="conversion-nav">
             <button class="nav-btn" id="ft-cm-btn">Ft to Cm</button>
-            <button class="nav-btn">Yard to Ft</button>
-            <button class="nav-btn">Miles to Km</button>
-            <button class="nav-btn">Km to Nautical Miles</button>
+            <button class="nav-btn" id="yard-ft-btn">Yard to Ft</button>
+            <button class="nav-btn" id="mi-km-btn">Miles to Km</button>
+            <button class="nav-btn" id="km-nmi-btn">Km to Nautical Miles</button>
         </div>
         <div class="conversion-card" id="ft-cm-card">
-            <div class="input-row">
+            <div class="input-row" >
                 <input type="number" id="feet-input" class="input-box" placeholder="Feet">
                 <span class="unit-label">'</span>
                 <input type="number" id="inch-input" class="input-box" placeholder="Inches">
@@ -30,6 +30,48 @@
             <div class="output-row">
                 <div class="output-value" id="cm-output">
                     <span class="unit-label output-unit">Cm</span>
+                </div>
+            </div>
+        </div>
+        <div class="conversion-card" id="yard-ft-card">
+            <div class="input-row">
+                <input type="number" id="yard-input" class="input-box" placeholder="Yards">
+                <span class="unit-label">Yards</span>
+            </div>
+            <div class="equals-row">
+                <button class="equals-btn" onClick="convertYardToFt()">=</button>
+            </div>
+            <div class="output-row">
+                <div class="output-value" id="ft-output">
+                    <span class="unit-label output-unit">Ft</span>
+                </div>
+            </div>
+        </div>
+        <div class="conversion-card" id="mi-km-card">
+            <div class="input-row">
+                <input type="number" id="mi-input" class="input-box" placeholder="Miles">
+                <span class="unit-label">Miles</span>
+            </div>
+            <div class="equals-row">
+                <button class="equals-btn" onClick="convertMiToKm()">=</button>
+            </div>
+            <div class="output-row">
+                <div class="output-value" id="km-output">
+                    <span class="unit-label output-unit">Km</span>
+                </div>
+            </div>
+        </div>
+        <div class="conversion-card" id="km-nmi-card">
+            <div class="input-row">
+                <input type="number" class="input-box" id="km-input" placeholder="Km">
+                <span class="unit-label">Km</span>
+            </div>
+            <div class="equals-row">
+                <button class="equals-btn" onClick="convertKmToNmi()">=</button>
+            </div>
+            <div class="output-row">
+                <div class="output-value" id="nmi-output">
+                    <span class="unit-label output-unit">nmi</span>
                 </div>
             </div>
         </div>
