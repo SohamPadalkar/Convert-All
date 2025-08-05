@@ -13,10 +13,10 @@
         </div>
         <div class="conversion-nav">
             <button class="nav-btn" id="kg-pound-btn">Kg To Pounds(lb)</button>
-            <button class="nav-btn" id="grams-ounces-btn">Grams(g) To Ounces(oz)</button>
-            <button class="nav-btn" id="pounds-ounces-btn">Pounds(lb) To Ounces(oz)</button>
-            <button class="nav-btn" id="st-pound-btn">Stones(st) To Pounds(lb)</button>
-            <button class="nav-btn" id="ton-kg-btn">Tonnes to Kg</button>
+            <button class="nav-btn" id="g-oz-btn">Grams(g) To Ounces(oz)</button>
+            <button class="nav-btn" id="lb-oz-btn">Pounds(lb) To Ounces(oz)</button>
+            <button class="nav-btn" id="st-lb-btn">Stones(st) To Pounds(lb)</button>
+            <button class="nav-btn" id="t-kg-btn">Tonnes to Kg</button>
         </div>
         <div class="conversion-card" id="kg-pound-card">
             <div class="input-row">
@@ -24,11 +24,63 @@
                 <span class="unit-label">Kg</span>
             </div>
             <div class="equals-row">
-                <button class="equals-btn" onClick="convertKgToLb()">=</button>
+                <button class="equals-btn" onclick="convertKgToLb()">=</button>
             </div>
             <div class="output-row">
                 <div class="output-value" id="lb-output"></div>
                 <span class="unit-label output-unit">Pounds(lb)</span> 
+            </div>
+        </div>
+        <div class="conversion-card" id="g-oz-card">
+            <div class="input-row">
+                <input type="number" id="g-input" class="input-box">
+                <span clas="unit-label">Grams(g)</span>
+            </div>
+            <div class="equals-row">
+                <button class="equals-btn" onClick="convertGToOz()">=</button>
+            </div>
+            <div class="output-row">
+                <div class="output-value" id="oz-output"></div>
+                <span class="unit-label output-unit">Ounces(oz)</span>
+            </div>
+        </div>
+        <div class="conversion-card" id="lb-oz-card">
+            <div class="input-row">
+                <input type="number" id="lb-input" class="input-box">
+                <span clas="unit-label">Pounds(lb)</span>
+            </div>
+            <div class="equals-row">
+                <button class="equals-btn" onClick="convertLbToOz()">=</button>
+            </div>
+            <div class="output-row">
+                <div class="output-value" id="lb-oz-output"></div>
+                <span class="unit-label output-unit">Ounces(oz)</span>
+            </div>
+        </div>
+        <div class="conversion-card" id="st-lb-card">
+            <div class="input-row">
+                <input type="number" id="st-input" class="input-box">
+                <span clas="unit-label">Stones(st)</span>
+            </div>
+            <div class="equals-row">
+                <button class="equals-btn" onclick="convertStToLb()">=</button>
+            </div>
+            <div class="output-row">
+                <div class="output-value" id="st-lb-output"></div>
+                <span class="unit-label output-unit">Pounds(lb)</span>
+            </div>
+        </div>
+        <div class="conversion-card" id="t-kg-card">
+            <div class="input-row">
+                <input type="number" id="t-input" class="input-box">
+                <span clas="unit-label">Tonnes(t)</span>
+            </div>
+            <div class="equals-row">
+                <button class="equals-btn" onclick="convertTToKg()">=</button>
+            </div>
+            <div class="output-row">
+                <div class="output-value" id="t-kg-output"></div>
+                <span class="unit-label output-unit">Kg</span>
             </div>
         </div>
         <script src="script.js"></script>
