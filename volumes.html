@@ -4,8 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ConvertAll</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:900,700,400&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <div class="header">
+        <h2>Convert All Your Volumes</h2>
+    </div>
+    <div class="conversion-nav">
+        <button class="nav-btn" id="l-gal-btn">Liters(L) to Gallon(US gal)</button>
+        <button class="nav-btn" id="l-ccm-btn">Liters(L) to Cubic Meters(m<sup>3</sup>)</button>
+        <buton class="nav-btn" id="cci-ml-btn">Cubic Inches(inch<sup>3</sup>) To Milliliters(ml)</buton>
+        <button class="nav-btn" id="pt-l-btn">Pint(pt) To liters(L)</button>
+        <button class="nav-btn" id="oz-ml-btn">Ounces(fl oz.) To Milliliters(ml)</button>
+    </div>
+    <div class="conversion-card" id="l-gal-card">
+        <div class="input-row">
+            <input type="number" id="l-gal-input" class="input-box">
+            <span id="unit-label">L</span>
+        </div>
+        <div class="equals-row">
+            <button class="equals-btn" onclick="convertLToGal()">=</button>
+        </div>
+        <div class="output-row">
+            <div class="output-value" id="l-gal-output">
+                <span class="unit-label output-unit">Gal</span>
+            </div>
+        </div>
+    </div>
+    <div class="conversion-card" id="l-ccm-card">
+        <div class="input-row">
+            <input type="number" class="input-box" id="l-ccm-input">
+            <span class="unit-label">L</span>
+        </div>
+        <div class="equals-row">
+            <buutton class="equals-btn" onclick="convertLToCcm()">=</buutton>
+        </div>
+        <div class="output-row" >
+            <div class="output-value" id="l-ccm-output">
+                <span class="unit-label output-unit">m<sup>3</sup></span>
+            </div>
+        </div>
+    </div>
+    <div class="conversion-card" id="cci-ml-card">
+        <div class="input-row">
+            <input type="number" class="input-box" id="cci-ml-input">
+            <span class="unit-label">inch<sup>3</sup></span>
+        </div>
+        <div class="equals-row">
+            <buutton class="equals-btn" onclick="convertCciToMl()">=</buutton>
+        </div>
+        <div class="output-row" >
+            <div class="output-value" id="cci-ml-output">
+                <span class="unit-label output-unit">ml</span>
+            </div>
+        </div>
+    </div>
+    <div class="conversion-card" id="pt-l-card">
+        <div class="input-row">
+            <input type="number" class="input-box" id="pt-l-input">
+            <span class="unit-label">pt</span>
+        </div>
+        <div class="equals-row">
+            <buutton class="equals-btn" onclick="convertPtToL()">=</buutton>
+        </div>
+        <div class="output-row" >
+            <div class="output-value" id="pt-l-output">
+                <span class="unit-label output-unit">L</span>
+            </div>
+        </div>
+    </div>
+    <div class="conversion-card" id="oz-ml-card">
+        <div class="input-row">
+            <input type="number" class="input-box" id="oz-ml-input">
+            <span class="unit-label">fl oz.</span>
+        </div>
+        <div class="equals-row">
+            <buutton class="equals-btn" onclick="convertOzToMl()">=</buutton>
+        </div>
+        <div class="output-row" >
+            <div class="output-value" id="oz-ml-output">
+                <span class="unit-label output-unit">ml</span>
+            </div>
+        </div>
+    </div>
+    <script src="volumes-script.js"></script>
 </body>
 </html>
