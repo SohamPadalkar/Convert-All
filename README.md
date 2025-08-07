@@ -14,6 +14,7 @@
 - **Volume Conversions**: liters↔gallons, pints↔liters, fl oz↔ml, etc.
 - **Currency Conversion**: Live exchange rates (INR, USD, EUR, GBP) using the Frankfurter API.
 - **Fun Converters**: Dog years, Mars weight, and cat years!
+- **Kitchen Converters**: Tsp↔Tbsp, Tbsp↔fl oz., cups↔ml, cups↔g.
 
 ### How to Run
 

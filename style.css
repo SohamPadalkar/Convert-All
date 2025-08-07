@@ -30,9 +30,10 @@ h1 {
   justify-content: center;
   gap: 40px;
   margin-top: 40px;
+  flex-wrap: wrap;
 }
 
-.convert-btn {
+.convert-btn, .nav-btn {
   background: #db0000;
   color: white;
   font-size: 1.4em;
@@ -43,57 +44,49 @@ h1 {
   cursor: pointer;
   box-shadow: 0 4px 14px rgba(0,0,0,0.12);
   transition: transform 0.1s, background 0.2s;
+  margin-bottom: 20px;
 }
 
-.convert-btn:hover {
-  background: #a93226;
-  transform: scale(1.05);
-}
-
-.header {
-    background: #db0000;
-    padding: 20px 0  10px 0;
-    border-radius: 8px;
-    margin: 20px 16px 0 16px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
-    justify-content: center;
-    text-align: center;
-}
-
-.header h2 {
-    color: #fff;
-    font-size: 2rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-    margin: 0;
-}
-
-.conversion-nav {
-    display: flex;
-    justify-content: center;
-    gap: 32px;
-    margin: 38px 0 32px 0;
-}
-
-.nav-btn {
-  background: #db0000;
-  color: #fff;
-  font-size: 1.2em;
-  font-weight: bold;
-  padding: 16px 40px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.1s;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.09);
-}
-
+.convert-btn:hover,
 .nav-btn.active,
 .nav-btn:hover {
   background: #f98181;
   color: #a93226;
   border: 2px solid #a93226;
   transform: scale(1.05);
+}
+
+.header {
+  background: #db0000;
+  padding: 20px 0 10px 0;
+  border-radius: 8px;
+  margin: 20px 16px 0 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  text-align: center;
+}
+
+.header h2 {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.conversion-nav {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin: 38px 0 32px 0;
+  flex-wrap: wrap;
+}
+
+.nav-btn {
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 16px 40px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.09);
 }
 
 .conversion-card {
@@ -107,7 +100,7 @@ h1 {
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 28px
+  gap: 28px;
 }
 
 .input-row {
@@ -159,8 +152,19 @@ h1 {
   background: #c96157;
 }
 
-.output-value {
+.output-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
   background: #f98181;
+  padding: 20px 6px;
+  border-radius: 12px;
+  min-height: 62px;
+}
+
+.output-value {
+  background: none;
   border: none;
   font-size: 2em;
   color: #a93226;
@@ -178,58 +182,19 @@ h1 {
   font-weight: bold;
 }
 
-#ft-cm-card {
-  display: none;
-}
-
-#yard-ft-card{
-  display: none;
-}
-
-#mi-km-card {
-  display: none;
-}
-
-#km-nmi-card {
-  display: none;
-}
-
-#kg-pound-card {
-  display: none;
-}
-
-#g-oz-card {
-  display: none;
-}
-
-#lb-oz-card {
-  display: none;
-}
-
-#st-lb-card {
-  display: none;
-}
-
-#t-kg-card {
-  display: none;
-}
-
-#l-gal-card {
-  display: none;
-}
-
-#l-ccm-card {
-  display: none;
-}
-
-#cci-ml-card {
-  display: none;
-}
-
-#pt-l-card {
-  display: none;
-}
-
+#ft-cm-card,
+#yard-ft-card,
+#mi-km-card,
+#km-nmi-card,
+#kg-pound-card,
+#g-oz-card,
+#lb-oz-card,
+#st-lb-card,
+#t-kg-card,
+#l-gal-card,
+#l-ccm-card,
+#cci-ml-card,
+#pt-l-card,
 #oz-ml-card {
   display: none;
 }
@@ -263,4 +228,41 @@ h1 {
   background: #fff;
   color: #a93226;
   font-weight: 500;
+}
+
+/* Responsive polish */
+@media (max-width: 520px) {
+  .button-grid {
+    flex-direction: column;
+    gap: 22px;
+  }
+  .container {
+    padding: 20px 0;
+  }
+  .conversion-card {
+    width: 98vw;
+    min-width: 0;
+    padding: 18px 4px;
+    margin-top: 24px;
+    border-radius: 14px;
+  }
+  .conversion-nav {
+    flex-direction: column;
+    gap: 17px;
+    margin: 20px 0 20px 0;
+  }
+  .convert-btn, .nav-btn {
+    padding: 20px 10px;
+    font-size: 1em;
+    border-radius: 13px;
+  }
+}
+
+@media (max-width:350px) {
+  h1 {
+    font-size: 2.3em;
+  }
+  .conversion-card {
+    font-size: 0.9em;
+  }
 }

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ConvertAll</title>
+        <link  rel="icon" type="image/png" href="favicon.png">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:900,700,400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="header">
+            <h2>Convert All Your Kitchen Measurments</h2>
+        </div>
+        <div class="conversion-nav">
+            <button class="nav-btn" id="tsp-tbsp-btn">Teaspoons(tsp) To Tablespoons(tbsp)</button>
+            <button class="nav-btn" id="tbsp-oz-btn">Tablespoons(tbsp) To Ounces(fl oz.)</button>
+            <button class="nav-btn" id="tbsp-ml-btn">Tablespoons(tbsp) To Millilitre(ml)</button>
+            <button class="nav-btn" id="cup-ml-btn">Cups To Millilitre(ml)</button>
+            <button class="nav-btn" id="cup-g-btn">Cups To Grams(g)</button>
+        </div>
+
+        <div class="conversion-card" id="tsp-tbsp-card" style="display:none;">
+            <div class="input-row">
+                <input type="number" id="tsp-tbsp-input" class="input-box" placeholder="Tsp">
+                <span class="unit-label">Teaspoons(tsp)</span>
+            </div>
+            <div class="equals-row">
+                <button class="equals-btn" onclick="convertTspToTbsp()">=</button>
+            </div>
+            <div class="output-row">
+                <div class="output-value" id="tsp-tbsp-output">-</div>
+                <span class="unit-label output-unit">Tablespoons(tbsp)</span>
+            </div>
+        </div>
+
+        <div class="conversion-card" id="tbsp-oz-card" style="display:none;">
+            <div class="input-row">
+                <input type="number" id="tbsp-oz-input" class="input-box" placeholder="Tbsp">
+                <span class="unit-label">Tablespoons(tbsp)</span>
+            </div>
+            <div class="equals-row">
+                <button class="equals-btn" onclick="convertTbspToOz()">=</button>
+            </div>
+            <div class="output-row">
+                <div class="output-value" id="tbsp-oz-output">-</div>
+                <span class="unit-label output-unit">Ounces(oz)</span>
+            </div>
+        </div>
+
+        <div class="conversion-card" id="tbsp-ml-card" style="display:none;">
+            <div class="input-row">
+                <input type="number" id="tbsp-ml-input" class="input-box" placeholder="Tbsp">
+                <span class="unit-label">Tablespoons(tbsp)</span>
+            </div>
+            <div class="equals-row">
+                <button class="equals-btn" onclick="convertTbspToMl()">=</button>
+            </div>
+            <div class="output-row">
+                <div class="output-value" id="tbsp-ml-output">-</div>
+                <span class="unit-label output-unit">Millilitres(ml)</span>
+            </div>
+        </div>
+
+        <div class="conversion-card" id="cup-ml-card" style="display:none;">
+            <div class="input-row">
+                <input type="number" id="cup-ml-input" class="input-box" placeholder="Cups">
+                <span class="unit-label">Cups</span>
+            </div>
+            <div class="equals-row">
+                <button class="equals-btn" onclick="convertCupToMl()">=</button>
+            </div>
+            <div class="output-row">
+                <div class="output-value" id="cup-ml-output">-</div>
+                <span class="unit-label output-unit">Millilitres(ml)</span>
+            </div>
+        </div>
+
+        <div class="conversion-card" id="cup-g-card" style="display:none;">
+            <div class="input-row">
+                <input type="number" id="cup-g-input" class="input-box" placeholder="Cups">
+                <span class="unit-label">Cups</span>
+            </div>
+            <div class="equals-row">
+                <button class="equals-btn" onclick="convertCupToG()">=</button>
+            </div>
+            <div class="output-row">
+                <div class="output-value" id="cup-g-output">-</div>
+                <span class="unit-label output-unit">Grams(g)</span>
+            </div>
+        </div>
+        <script src="kitchen-style.js"></script>
+    </body>
+</html>
