@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert All</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:900,700,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h2>Fun Converters</h2>
+    </div>
+    <div class="conversion-nav">
+        <button class="nav-btn" id="dog-years-btn">Dog Years</button>
+        <button class="nav-btn" id="mars-weight-btn">Mars Weight</button>
+        <button class="nav-btn" id="cat-years-btn">Cat Years</button>
+    </div>
+    <div class="conversion-card" id="dog-years-card" style="display:none;">
+        <div class="input-row">
+            <input type="number" id="human-age-input" class="input-box" placeholder="Your Age (years)">
+        </div>
+        <div class="equals-row">
+            <button class="equals-btn" onclick="convertDogYears()">=</button>
+        </div>
+        <div class="output-row">
+            <div class="output-value" id="dog-years-output">–</div>
+            <span class="unit-label output-unit">Dog Years</span>
+        </div>
+    </div>
+    <div class="conversion-card" id="mars-weight-card" style="display:none;">
+        <div class="input-row">
+            <input type="number" id="earth-weight-input" class="input-box" placeholder="Your Weight (kg)">
+        </div>
+        <div class="equals-row">
+            <button class="equals-btn" onclick="convertMarsWeight()">=</button>
+        </div>
+        <div class="output-row">
+            <div class="output-value" id="mars-weight-output">–</div>
+            <span class="unit-label output-unit">Kg on Mars</span>
+        </div>
+    </div>
+    <div class="conversion-card" id="cat-years-card" style="display:none;">
+        <div class="input-row">
+            <input type="number" id="human-age-cat-input" class="input-box" placeholder="Your Age (years)">
+        </div>
+        <div class="equals-row">
+            <button class="equals-btn" onclick="convertCatYears()">=</button>
+        </div>
+        <div class="output-row">
+            <div class="output-value" id="cat-years-output">–</div>
+            <span class="unit-label output-unit">Cat Years</span>
+        </div>
+    </div>
+
+    <script src="fun.js">
+    </script>
+</body>
+</html>

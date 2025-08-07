@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ConvertAll</title>
-  <!-- Optional modern font: Montserrat -->
+  <link rel="icon" type="image/png" href="favicon.png">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:900,700,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -16,7 +16,64 @@
       <a href="lengths.html" class="convert-btn">Lengths</a>
       <a href="weights.html" class="convert-btn">Weights</a>
       <a href="volumes.html" class="convert-btn">Volumes</a>
+      <button class="nav-btn" id="currency-btn">Currency</button>
+      <a href="fun.html" class="convert-btn">Fun Conversions</a>
     </div>
   </div>
+
+  <div class="conversion-card" id="currency-card" style="display:none;">
+    <div class="input-row">
+      <input type="number" id="currency-amount" class="input-box" placeholder="Amount">
+      <select id="currency-from">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="INR">INR</option>
+        <option value="GBP">GBP</option>
+      </select>
+      <span>to</span>
+      <select id="currency-to">
+        <option value="INR">INR</option>
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="GBP">GBP</option>
+      </select>
+    </div>
+    <div class="equals-row">
+      <button class="equals-btn" onclick="convertCurrency()">=</button>
+    </div>
+    <div class="output-row">
+      <div class="output-value" id="currency-result">–</div>
+    </div>
+  </div>
+
+  <script>
+    const currencyBtn = document.getElementById('currency-btn');
+    const currencyCard = document.getElementById('currency-card');
+    if (currencyBtn && currencyCard) {
+      currencyBtn.addEventListener('click', () => {
+        currencyCard.style.display = 'block';
+      });
+    }
+
+    function convertCurrency() {
+      const amount = parseFloat(document.getElementById('currency-amount').value) || 0;
+      const from = document.getElementById('currency-from').value;
+      const to = document.getElementById('currency-to').value;
+      if (!amount) {
+        document.getElementById('currency-result').textContent = "–";
+        return;
+      }
+      fetch(`https://api.frankfurter.app/latest?amount=${amount}&from=${from}&to=${to}`)
+        .then(res => res.json())
+        .then(data => {
+          const result = data.rates && data.rates[to];
+          document.getElementById('currency-result').textContent =
+            (result !== undefined) ? result.toFixed(2) : "N/A";
+        })
+        .catch(() => {
+          document.getElementById('currency-result').textContent = "Error!";
+        });
+    }
+  </script>
 </body>
 </html>

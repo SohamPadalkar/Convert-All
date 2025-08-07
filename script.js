@@ -1,3 +1,4 @@
+// Conversion Functions
 
 function convertFtToCm() {
   const feet = parseFloat(document.getElementById('feet-input').value) || 0;
@@ -55,85 +56,40 @@ function convertTToKg() {
   document.getElementById("t-kg-output").textContent = kg.toFixed(2);
 }
 
+// Navigation/Panel Logic
 
-const ftcmBtn = document.getElementById("ft-cm-btn");
-const ftcmCard = document.getElementById("ft-cm-card");
+const panels = [
+  { btn: document.getElementById("ft-cm-btn"),    card: document.getElementById("ft-cm-card") },
+  { btn: document.getElementById("yard-ft-btn"),  card: document.getElementById("yard-ft-card") },
+  { btn: document.getElementById("mi-km-btn"),    card: document.getElementById("mi-km-card") },
+  { btn: document.getElementById("km-nmi-btn"),   card: document.getElementById("km-nmi-card") },
+  { btn: document.getElementById("kg-pound-btn"), card: document.getElementById("kg-pound-card") },
+  { btn: document.getElementById("g-oz-btn"),     card: document.getElementById("g-oz-card") },
+  { btn: document.getElementById("lb-oz-btn"),    card: document.getElementById("lb-oz-card") },
+  { btn: document.getElementById("st-lb-btn"),    card: document.getElementById("st-lb-card") },
+  { btn: document.getElementById("t-kg-btn"),     card: document.getElementById("t-kg-card") }
+];
 
-const yardftBtn = document.getElementById("yard-ft-btn");
-const yardftCard = document.getElementById("yard-ft-card");
-
-const mikmBtn = document.getElementById("mi-km-btn");
-const mikmCard = document.getElementById("mi-km-card");
-
-const kmnmiBtn = document.getElementById('km-nmi-btn');
-const kmnmiCard = document.getElementById("km-nmi-card");
-
-const kglbBtn = document.getElementById("kg-pound-btn");
-const kglbCard = document.getElementById("kg-pound-card");
-
-const gozBtn = document.getElementById("g-oz-btn");
-const gozCard = document.getElementById("g-oz-card");
-
-const lbozBtn = document.getElementById("lb-oz-btn");
-const lbozCard = document.getElementById("lb-oz-card");
-
-const stlbBtn = document.getElementById("st-lb-btn");
-const stlbCard = document.getElementById("st-lb-card");
-
-const tkgBtn = document.getElementById("t-kg-btn");
-const tkgCard = document.getElementById("t-kg-card");
-
-if (ftcmBtn && ftcmCard) {
-  ftcmBtn.addEventListener('click', () => {
-    ftcmCard.style.display = 'block';
-  })
+function hideAllCards() {
+  panels.forEach(({card}) => { if(card) card.style.display = 'none'; });
+  panels.forEach(({btn}) => { if(btn) btn.classList.remove('active'); });
 }
 
-if (yardftBtn && yardftCard) {
-  yardftBtn.addEventListener('click', () => {
-  yardftCard.style.display = 'block';
-  })
-}
+panels.forEach(({btn, card}) => {
+  if (btn && card) {
+    btn.addEventListener('click', () => {
+      hideAllCards();
+      card.style.display = 'block';
+      btn.classList.add('active');
+    });
+  }
+});
 
-if (mikmBtn && mikmCard) {
-  mikmBtn.addEventListener('click', () => {
-  mikmCard.style.display = 'block';
-  })
-}
-
-if (kmnmiBtn && kmnmiCard) {
-  kmnmiBtn.addEventListener('click', () => {
-  kmnmiCard.style.display = 'block';
-  })
-}
-
-if (kglbBtn && kglbCard) {
-  kglbBtn.addEventListener('click', () => {
-  kglbCard.style.display = 'block';
-  })
-}
-
-
-if (gozBtn && gozCard) {
-  gozBtn.addEventListener('click', () => {
-    gozCard.style.display = 'block';
-  })
-}
-
-if (lbozBtn && lbozCard) {
-  lbozBtn.addEventListener('click', () => {
-    lbozCard.style.display = 'block';
-  })
-}
-
-if (stlbBtn && stlbCard) {
-  stlbBtn.addEventListener('click', () => {
-    stlbCard.style.display = 'block';
-  })
-}
-
-if (tkgBtn && tkgCard) {
-  tkgBtn.addEventListener('click', () => {
-    tkgCard.style.display = 'block';
-  })
+// Show first card by default (optional: only if you want a default open)
+for (let i = 0; i < panels.length; i++) {
+  if (panels[i].btn && panels[i].card) {
+    panels[i].card.style.display = 'block';
+    panels[i].btn.classList.add('active');
+    break;
+  }
 }

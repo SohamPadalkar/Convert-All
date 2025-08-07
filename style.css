@@ -233,3 +233,34 @@ h1 {
 #oz-ml-card {
   display: none;
 }
+
+/* Dropdown (select) styles for currency card */
+.input-row select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: #f89b9b;
+  color: #a93226;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 32px 12px 12px;
+  margin: 0 6px;
+  font-size: 1.1em;
+  font-family: inherit;
+  font-weight: bold;
+  outline: none;
+  box-shadow: 0 2px 7px rgba(0,0,0,0.11);
+  transition: background 0.15s, color 0.15s;
+  cursor: pointer;
+}
+
+.input-row select:focus {
+  border: 2px solid #a93226;
+  background: #ffe0e0;
+}
+
+.input-row select option {
+  background: #fff;
+  color: #a93226;
+  font-weight: 500;
+}
